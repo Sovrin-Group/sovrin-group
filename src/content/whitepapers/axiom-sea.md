@@ -1,5 +1,5 @@
 ---
-title: Axiom Sea - Test
+title: "Axiom Sea "
 category: Unified Architecture
 summary: Publication details coming soon.
 date: 2026-08-15
