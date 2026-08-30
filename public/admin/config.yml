@@ -43,8 +43,6 @@ collections:
         options:
           - "Unified Architecture"
           - "Governed Identity"
-          - "Identity Theory"
-          - "Case Studies"
           - "Other Research"
         hint: "Which section of the White Papers page this appears under."
       - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the card." }

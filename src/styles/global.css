@@ -239,12 +239,12 @@ h1, h2, h3, h4 {
 .hero-home .mark {
   width: min(300px, 70%);
   filter: drop-shadow(0 0 34px rgba(120, 158, 207, 0.45)) drop-shadow(0 24px 40px rgba(2, 11, 24, 0.6));
-  animation: float 7s ease-in-out infinite;
+  animation: float 3.5s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-16px); }
 }
 
 @media (prefers-reduced-motion: reduce) { .hero-home .mark { animation: none; } }
@@ -397,6 +397,9 @@ a.card:hover {
 }
 
 .card-icon img { width: 28px; height: auto; }
+
+/* Invisible spacer so cards without a badge align with cards that have one */
+.badge-ghost { visibility: hidden; }
 
 .badge {
   display: inline-block;
@@ -641,5 +644,5 @@ a.card:hover {
 
 .site-footer .legal { line-height: 1.9; }
 
-.site-footer a { color: var(--blue-300); text-decoration: none; }
+.site-footer a { color: var(--blue-300); text-decoration: none; font-size: calc(0.82rem + 2pt); }
 .site-footer a:hover { text-decoration: underline; }
