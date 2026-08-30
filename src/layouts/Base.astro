@@ -1,0 +1,78 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  section?: 'about' | 'solutions' | 'resources' | 'contact' | 'home';
+}
+
+const {
+  title,
+  description = 'Sovrin Group — Unified Architecture. Governed Identity. Deterministic Systems.',
+  section = 'home',
+} = Astro.props;
+
+const navItems = [
+  { label: 'About', href: '/about/', key: 'about' },
+  { label: 'Solutions', href: '/solutions/', key: 'solutions' },
+  { label: 'Resources', href: '/resources/', key: 'resources' },
+  { label: 'Contact', href: '/contact/', key: 'contact' },
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container bar">
+        <a href="/" class="brand" aria-label="Sovrin Group home">
+          <img src="/images/logo.png" alt="Sovrin Group logo" />
+          <span class="wordmark">
+            <span class="primary">SOVRIN</span>
+            <span class="secondary">GROUP</span>
+          </span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="site-nav" aria-label="Main navigation">
+          {navItems.map((item) => (
+            <a href={item.href} aria-current={section === item.key ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container cols">
+        <div class="legal">
+          © {new Date().getFullYear()} Sovrin Group LLC. All Rights Reserved.<br />
+          Classification: Public · AI-Assisted: Created with assistance from Microsoft Copilot (reviewed).
+        </div>
+        <div>
+          <a href="/resources/whitepapers/">White Papers</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      toggle?.addEventListener('click', () => {
+        const open = nav?.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(!!open));
+      });
+    </script>
+  </body>
+</html>

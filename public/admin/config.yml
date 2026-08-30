@@ -1,0 +1,53 @@
+# ============================================================
+# Sovrin Group content manager configuration
+#
+# "backend" controls where saved content goes.
+#   - While developing locally, local_backend below lets the
+#     admin write straight to the files on this computer
+#     (run: npx decap-server in the project folder).
+#   - When deployed, the github backend saves through GitHub;
+#     the repo line gets filled in at deploy time.
+# ============================================================
+
+backend:
+  name: github
+  repo: REPLACE_WITH_GITHUB_USER/sovrin-group   # set during deployment
+  branch: main
+
+# Allow the local proxy during development on this machine.
+local_backend: true
+
+# Uploaded PDFs are stored here in the project…
+media_folder: "public/whitepapers"
+# …and served from this URL path on the live site.
+public_folder: "/whitepapers"
+
+site_url: https://sovringroup.com
+logo_url: /images/logo.png
+
+collections:
+  - name: "whitepapers"
+    label: "White Papers"
+    label_singular: "White Paper"
+    folder: "src/content/whitepapers"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    sortable_fields: ["date", "title", "category"]
+    summary: "{{title}} — {{category}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "The white paper's full title as it should appear on the site." }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Unified Architecture"
+          - "Governed Identity"
+          - "Identity Theory"
+          - "Case Studies"
+          - "Other Research"
+        hint: "Which section of the White Papers page this appears under."
+      - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the card." }
+      - { label: "Publication Date", name: "date", widget: "datetime", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "PDF File", name: "pdf", widget: "file", hint: "Upload the white paper PDF here." }
+      - { label: "Notes (optional, not shown on site)", name: "body", widget: "markdown", required: false }

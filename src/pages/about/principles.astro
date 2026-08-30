@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const tenets = [
+  {
+    title: 'Identity as the Primary Operator.',
+    body: "Identity isn't a profile or a record. It's the operating force that shapes system behavior, decisions, and continuity.",
+  },
+  {
+    title: 'Continuity as a Non-Negotiable Requirement.',
+    body: 'Systems must maintain shape, intent, and alignment over time; continuity is mandatory, not an aspiration.',
+  },
+  {
+    title: 'Governance as Architecture, Not Policy.',
+    body: 'Governance is designed into the system — not bolted on as documentation or compliance afterthoughts.',
+  },
+  {
+    title: 'Zero-Drift as a Design Constraint.',
+    body: 'Systems must not drift in behavior, identity, or intent; drift is treated as a failure mode, not an inevitability.',
+  },
+  {
+    title: 'Human + AI Co-Architecture.',
+    body: 'People and AI build better systems together than either can alone.',
+  },
+  {
+    title: 'Deterministic, Reproducible Reasoning.',
+    body: 'Every governed operation must be traceable, explainable, and re-constructible.',
+  },
+  {
+    title: 'Integrity Over Speed.',
+    body: 'Speed is a byproduct of clarity and structure, not the goal.',
+  },
+  {
+    title: 'Architecture as the Source of Trust.',
+    body: 'Trust comes from structure, not from promises or policies.',
+  },
+];
+---
+<Base title="Principles — Sovrin Group" section="about">
+  <section class="hero-page">
+    <div class="container">
+      <p class="kicker">About · Principles</p>
+      <h1>Our Core Tenets: Trust. Transparency. Fairness. Authenticity.</h1>
+      <p class="lede">
+        Sovrin Group is built on a simple belief: organizations run better when
+        identity, governance, and AI work together with clarity and intention.
+        Our principles guide how we design systems, how we partner with clients,
+        and how we ensure every solution remains trustworthy as it grows.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tenet-list">
+        {tenets.map((t) => (
+          <div class="tenet">
+            <h3>{t.title}</h3>
+            <p>{t.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

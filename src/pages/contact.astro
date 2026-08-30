@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Contact — Sovrin Group" section="contact">
+  <section class="hero-page">
+    <div class="container">
+      <p class="kicker">Contact</p>
+      <h1>We'll call you back at your convenience.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <form
+        class="contact-form"
+        name="callback"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/contact/thanks/"
+      >
+        <input type="hidden" name="form-name" value="callback" />
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <label>
+          First &amp; Last Name
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+
+        <label>
+          Organization
+          <input type="text" name="organization" autocomplete="organization" />
+        </label>
+
+        <div class="form-row">
+          <label>
+            Preferred Callback Number
+            <input type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required autocomplete="tel" />
+          </label>
+          <label>
+            Preferred Callback Day / Time
+            <input type="text" name="callback_time" placeholder="mm/dd, hh:mm" />
+          </label>
+        </div>
+
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+</Base>
