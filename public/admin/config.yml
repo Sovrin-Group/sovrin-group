@@ -11,7 +11,7 @@
 
 backend:
   name: github
-  repo: REPLACE_WITH_GITHUB_USER/sovrin-group   # set during deployment
+  repo: Sovrin-Group/sovrin-group
   branch: main
 
 # Allow the local proxy during development on this machine.
