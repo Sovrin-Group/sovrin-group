@@ -1,0 +1,3 @@
+# Serve the blocking robots.txt only on the temporary Netlify address;
+# the real domain automatically gets the normal (indexable) one.
+https://sovrin-group.netlify.app/robots.txt /robots-staging.txt 200!
