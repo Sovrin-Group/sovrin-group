@@ -1,89 +1,121 @@
 ---
-import Base from '../layouts/Base.astro';
-import { getCollection } from 'astro:content';
-
-const papers = await getCollection('whitepapers');
-papers.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const latest = papers.slice(0, 3);
-
-const fmt = (d: Date) =>
-  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+import Bare from '../layouts/Bare.astro';
 ---
-<Base title="Sovrin Group — Unified Architecture. Governed Identity. Deterministic Systems." section="home">
-  <div class="dark-zone">
-    <section class="hero-home">
-      <div class="container split">
-        <div>
-          <p class="kicker">Sovrin Group</p>
-          <h1>
-            <span>Unified Architecture.</span>
-            <span class="metallic">Governed Identity.</span>
-            <span>Deterministic Systems.</span>
-          </h1>
-          <p class="lede">
-            AI systems should be built on identity, governed with clarity, and
-            designed to stay aligned as they grow.
-          </p>
-          <div class="actions">
-            <a class="btn" href="/solutions/">Explore Solutions</a>
-            <a class="btn btn-ghost" href="/resources/whitepapers/">Browse White Papers</a>
-          </div>
-        </div>
-        <div class="mark-wrap">
-          <img class="mark" src="/images/logo.png" alt="Sovrin Group mark" />
-        </div>
-      </div>
-    </section>
+<Bare title="Sovrin Group — Coming Soon">
+  <main class="cs">
+    <div class="cs-inner">
+      <img class="cs-mark" src="/images/logo.png" alt="Sovrin Group" />
 
-    <section class="pillars">
-      <div class="container">
-        <div class="pillar-grid">
-          <a class="pillar" href="/solutions/identity/">
-            <img class="glyph" src="/images/glyph-arrow-fg.png" alt="" />
-            <h3>Governed Identity</h3>
-            <p>Non-negotiable adherence to identity governance.</p>
-          </a>
-          <a class="pillar" href="/solutions/">
-            <img class="glyph" src="/images/glyph-mp-i.png" alt="" />
-            <h3>Unified Architecture</h3>
-            <p>Unified architecture for digital sovereignty.</p>
-          </a>
-          <a class="pillar" href="/resources/">
-            <img class="glyph" src="/images/glyph-contour-s.png" alt="" />
-            <h3>Deterministic Systems</h3>
-            <p>Deterministic integrity and auditability.</p>
-          </a>
-        </div>
+      <div class="cs-wordmark">
+        <span class="cs-primary">SOVRIN</span>
+        <span class="cs-secondary">GROUP</span>
       </div>
-    </section>
-  </div>
 
-  {latest.length > 0 && (
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="kicker">Latest Research</p>
-          <h2 class="section-title">Common dots. Uncommon insights.</h2>
-          <p class="section-lede">
-            Recent publications on identity, governance, and AI alignment.
-          </p>
-        </div>
-        <div class="wp-grid">
-          {latest.map((p) => (
-            <article class="wp-card">
-              <span class="wp-date">{fmt(p.data.date)}</span>
-              <h3>{p.data.title}</h3>
-              <p>{p.data.summary}</p>
-              <a class="btn" href={p.data.pdf} target="_blank" rel="noopener">Download PDF</a>
-            </article>
-          ))}
-        </div>
-        <p style="margin-top: 1.8rem;">
-          <a class="btn btn-outline" style="background: transparent; color: var(--navy-700); border: 1.5px solid var(--blue-500);" href="/resources/whitepapers/">
-            View All White Papers
-          </a>
-        </p>
-      </div>
-    </section>
-  )}
-</Base>
+      <p class="cs-kicker">Coming soon</p>
+
+      <ul class="cs-taglines">
+        <li>Governed Identity.</li>
+        <li>Unified Architecture.</li>
+        <li>Deterministic Systems.</li>
+      </ul>
+    </div>
+
+    <footer class="cs-footer">
+      © {new Date().getFullYear()} Sovrin Group LLC. All Rights Reserved.
+    </footer>
+  </main>
+</Bare>
+
+<style>
+  .cs {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: url('/images/hero-gradient.png') center / cover no-repeat, var(--navy-950);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem 0;
+  }
+
+  .cs-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .cs-mark {
+    width: min(190px, 42vw);
+    height: auto;
+    filter: drop-shadow(0 0 40px rgba(120, 158, 207, 0.4))
+            drop-shadow(0 22px 44px rgba(2, 11, 24, 0.55));
+  }
+
+  .cs-wordmark {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.05;
+  }
+
+  .cs-primary {
+    font-family: var(--font-display);
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    /* optical centering: the tracking adds space after the final letter */
+    text-indent: 0.34em;
+    font-size: clamp(1.7rem, 5.2vw, 2.6rem);
+  }
+
+  .cs-secondary {
+    color: var(--blue-300);
+    font-weight: 400;
+    letter-spacing: 0.52em;
+    text-indent: 0.52em;
+    font-size: clamp(0.66rem, 1.7vw, 0.82rem);
+    margin-top: 0.5rem;
+  }
+
+  .cs-kicker {
+    margin-top: 2.4rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--blue-300);
+    padding: 0.55rem 1.4rem;
+    border: 1px solid rgba(160, 190, 240, 0.35);
+    border-radius: 999px;
+  }
+
+  .cs-taglines {
+    margin-top: 2.6rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem 2.6rem;
+    color: var(--text-on-dark);
+    font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+    font-weight: 500;
+  }
+
+  .cs-footer {
+    padding: 2rem 0 1.6rem;
+    color: var(--text-on-dark-soft);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 560px) {
+    .cs-taglines { gap: 0.55rem; flex-direction: column; }
+    .cs-kicker { margin-top: 2rem; }
+  }
+</style>
