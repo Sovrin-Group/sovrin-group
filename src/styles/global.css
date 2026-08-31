@@ -180,7 +180,7 @@ h1, h2, h3, h4 {
 /* ---------- Dark surfaces ---------- */
 
 .dark-zone {
-  background: url('/images/hero-gradient.png') center / cover no-repeat, var(--navy-950);
+  background: url('/images/hero-gradient.jpg') center / cover no-repeat, var(--navy-950);
   position: relative;
   color: var(--text-on-dark);
 }
