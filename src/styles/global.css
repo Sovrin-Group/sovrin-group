@@ -56,7 +56,16 @@ body {
   flex-direction: column;
 }
 
-body > main { flex: 1 0 auto; }
+body > main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* the gradient section stretches to meet the footer — no bare page
+   background showing beneath short pages */
+body > main > .dark-zone { flex: 1 0 auto; }
+body > main > .legacy-light { flex: 1 0 auto; }
 
 img { max-width: 100%; display: block; }
 
