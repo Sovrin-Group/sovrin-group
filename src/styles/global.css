@@ -45,12 +45,18 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-sans);
-  background: var(--surface);
+  background: var(--navy-950);
   color: var(--ink);
   line-height: 1.65;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
+  /* keep the footer at the very bottom on short pages */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+body > main { flex: 1 0 auto; }
 
 img { max-width: 100%; display: block; }
 
@@ -645,9 +651,10 @@ a.card:hover {
   background: var(--navy-950);
   border-top: 1px solid rgba(120, 158, 207, 0.2);
   color: var(--text-on-dark-soft);
-  margin-top: 3rem;
+  margin-top: 0;
   padding: 2.4rem 0;
   font-size: 0.82rem;
+  flex-shrink: 0;
 }
 
 .site-footer .cols {
