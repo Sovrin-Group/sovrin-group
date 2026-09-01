@@ -660,3 +660,50 @@ a.card:hover {
 
 .site-footer a { color: var(--blue-300); text-decoration: none; font-size: calc(0.82rem + 2pt); }
 .site-footer a:hover { text-decoration: underline; }
+
+/* ============================================
+   Legacy light section — kept on the Resources
+   landing page only, for side-by-side comparison
+   against the new dark treatment.
+   ============================================ */
+
+.legacy-light { background: var(--surface); }
+
+.legacy-light .section-title { color: var(--navy-800); }
+.legacy-light .section-lede { color: var(--ink-soft); }
+.legacy-light .section-head .kicker { color: var(--blue-500); }
+
+.legacy-light .card {
+  background: var(--white);
+  border: 1px solid rgba(76, 99, 151, 0.15);
+  box-shadow: var(--shadow-card);
+}
+
+.legacy-light a.card:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(120, 158, 207, 0.5);
+}
+
+.legacy-light .card h3 { color: var(--navy-800); }
+.legacy-light .card p { color: var(--ink-soft); }
+
+.legacy-light .badge {
+  background: var(--card-tint);
+  border-color: transparent;
+  color: var(--navy-700);
+}
+
+/* the original circular glyph well */
+.legacy-light .card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, var(--navy-700), var(--navy-950));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 6px 14px rgba(14, 25, 48, 0.25);
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.legacy-light .card-icon img { width: 38px; height: 38px; }
