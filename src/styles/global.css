@@ -77,9 +77,7 @@ h1, h2, h3, h4 {
 /* ---------- Header / nav ---------- */
 
 .site-header {
-  background: rgba(2, 11, 24, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(2, 11, 24, 0.94);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -175,6 +173,14 @@ h1, h2, h3, h4 {
 }
 
 .dark-zone > * { position: relative; }
+
+/* full-length dark page: gradient fixed so it covers however tall the page runs */
+.page-dark {
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
+.page-dark .section { padding-bottom: 5rem; }
 
 /* ---------- Home hero ---------- */
 
@@ -275,8 +281,6 @@ h1, h2, h3, h4 {
   border: 1px solid rgba(160, 190, 240, 0.2);
   border-radius: var(--radius);
   padding: 1.7rem 1.5rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
   text-decoration: none;
   display: flex;
@@ -340,7 +344,7 @@ h1, h2, h3, h4 {
   letter-spacing: 0.28em;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--blue-500);
+  color: var(--blue-300);
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -354,9 +358,9 @@ h1, h2, h3, h4 {
   background: linear-gradient(90deg, var(--blue-300), transparent);
 }
 
-.section-title { font-size: clamp(1.5rem, 3vw, 2.05rem); margin-bottom: 0.5rem; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2.05rem); margin-bottom: 0.5rem; color: var(--white); }
 
-.section-lede { color: var(--ink-soft); max-width: 760px; }
+.section-lede { color: var(--text-on-dark-soft); max-width: 760px; }
 
 /* ---------- Cards (light surfaces) ---------- */
 
@@ -367,49 +371,48 @@ h1, h2, h3, h4 {
 }
 
 .card {
-  background: var(--white);
-  border: 1px solid rgba(76, 99, 151, 0.15);
+  background: rgba(233, 238, 248, 0.05);
+  border: 1px solid rgba(160, 190, 240, 0.2);
   border-radius: var(--radius);
   padding: 1.8rem 1.6rem;
-  box-shadow: var(--shadow-card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 a.card { text-decoration: none; color: inherit; }
 
 a.card:hover {
-  box-shadow: var(--shadow-card-hover);
-  border-color: rgba(120, 158, 207, 0.5);
+  background: rgba(233, 238, 248, 0.08);
+  border-color: rgba(120, 158, 207, 0.55);
   transform: translateY(-3px);
 }
 
-.card h3 { font-size: 1.12rem; }
-.card p { color: var(--ink-soft); font-size: 0.95rem; }
+.card h3 { font-size: 1.12rem; color: var(--white); }
+.card p { color: var(--text-on-dark-soft); font-size: 0.95rem; }
 .card .badge { align-self: flex-start; }
 
 .card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 25%, var(--navy-700), var(--navy-950));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 6px 14px rgba(14, 25, 48, 0.25);
+  width: 62px;
+  height: 68px;
   display: grid;
   place-items: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 L96 29 L96 83 L50 110 L4 83 L4 29 Z' fill='none' stroke='%23789ECF' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.card-icon img { width: 38px; height: 38px; object-fit: contain; }
+.card-icon img { width: 30px; height: 30px; object-fit: contain; }
 
 /* Invisible spacer so cards without a badge align with cards that have one */
 .badge-ghost { visibility: hidden; }
 
 .badge {
   display: inline-block;
-  background: var(--card-tint);
-  color: var(--navy-700);
+  background: rgba(120, 158, 207, 0.18);
+  border: 1px solid rgba(160, 190, 240, 0.35);
+  color: var(--text-on-dark);
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -468,22 +471,23 @@ a.card:hover {
 
 /* ---------- Prose ---------- */
 
-.prose { max-width: 760px; }
+.prose { max-width: 760px; color: var(--text-on-dark-soft); }
 .prose p + p { margin-top: 1rem; }
 .prose h2 { margin: 2.2rem 0 0.8rem; font-size: 1.45rem; }
 .prose ul { margin: 1rem 0 1rem 1.3rem; }
 .prose li + li { margin-top: 0.45rem; }
-.prose li { color: var(--ink-soft); }
-.prose strong { color: var(--navy-800); }
+.prose li { color: var(--text-on-dark-soft); }
+.prose strong { color: var(--white); }
+.prose h2 { color: var(--white); }
 
 .tenet-list { display: grid; gap: 1.1rem; margin-top: 0.4rem; }
 
 .tenet {
-  background: var(--white);
-  border: 1px solid rgba(76, 99, 151, 0.15);
+  background: rgba(233, 238, 248, 0.05);
+  border: 1px solid rgba(160, 190, 240, 0.2);
   border-radius: var(--radius);
   padding: 1.3rem 1.5rem;
-  box-shadow: var(--shadow-card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
   display: grid;
   grid-template-columns: 10px 1fr;
   gap: 1.1rem;
@@ -500,14 +504,15 @@ a.card:hover {
   border-radius: 2px;
 }
 
-.tenet h3 { grid-column: 2; font-size: 1.05rem; margin-bottom: 0.3rem; }
-.tenet p { grid-column: 2; color: var(--ink-soft); font-size: 0.95rem; }
+.tenet h3 { grid-column: 2; font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--white); }
+.tenet p { grid-column: 2; color: var(--text-on-dark-soft); font-size: 0.95rem; }
 
 /* ---------- White papers ---------- */
 
 .wp-category { margin-top: 2.8rem; }
 
 .wp-category > h2 {
+  color: var(--white);
   font-size: 1.32rem;
   display: flex;
   align-items: center;
@@ -529,10 +534,10 @@ a.card:hover {
 }
 
 .wp-card {
-  background: var(--white);
-  border: 1px solid rgba(76, 99, 151, 0.15);
+  background: rgba(233, 238, 248, 0.05);
+  border: 1px solid rgba(160, 190, 240, 0.2);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
   padding: 1.5rem 1.5rem 1.3rem;
   display: flex;
   flex-direction: column;
@@ -541,39 +546,40 @@ a.card:hover {
 }
 
 .wp-card:hover {
-  box-shadow: var(--shadow-card-hover);
-  border-color: rgba(120, 158, 207, 0.5);
+  background: rgba(233, 238, 248, 0.08);
+  border-color: rgba(120, 158, 207, 0.55);
   transform: translateY(-3px);
 }
 
-.wp-card h3 { font-size: 1.08rem; }
+.wp-card h3 { font-size: 1.08rem; color: var(--white); }
 
 .wp-card .wp-date {
-  color: var(--ink-faint);
+  color: var(--blue-300);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
 
-.wp-card p { color: var(--ink-soft); font-size: 0.93rem; flex-grow: 1; }
+.wp-card p { color: var(--text-on-dark-soft); font-size: 0.93rem; flex-grow: 1; }
 
 .wp-card .btn { align-self: flex-start; margin-top: 0.4rem; }
 
 .wp-empty {
-  background: var(--card-tint);
+  background: rgba(233, 238, 248, 0.05);
+  border: 1px solid rgba(160, 190, 240, 0.2);
   border-radius: var(--radius);
   padding: 2.5rem;
   text-align: center;
-  color: var(--ink-soft);
+  color: var(--text-on-dark-soft);
 }
 
 /* ---------- Contact form ---------- */
 
 .contact-form {
-  background: var(--white);
-  border: 1px solid rgba(76, 99, 151, 0.15);
+  background: rgba(233, 238, 248, 0.05);
+  border: 1px solid rgba(160, 190, 240, 0.2);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
   padding: 2rem;
   max-width: 640px;
   display: grid;
@@ -585,17 +591,21 @@ a.card:hover {
   gap: 0.35rem;
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--navy-800);
+  color: var(--text-on-dark);
 }
 
 .contact-form input,
 .contact-form textarea {
   font: inherit;
   padding: 0.65rem 0.8rem;
-  border: 1px solid var(--blue-200);
+  border: 1px solid rgba(160, 190, 240, 0.3);
   border-radius: 8px;
-  background: var(--surface);
+  background: rgba(2, 11, 24, 0.45);
+  color: var(--white);
 }
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: rgba(169, 183, 214, 0.6); }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
