@@ -299,11 +299,13 @@ h1, h2, h3, h4 {
 .pillar p { color: var(--text-on-dark-soft); font-size: 0.94rem; }
 
 .pillar .glyph {
-  width: 46px;
-  height: 46px;
+  width: 62px;
+  height: 68px;
+  padding: 19px 16px;
+  box-sizing: border-box;
   margin-bottom: 0.5rem;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(120, 158, 207, 0.4));
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 L96 29 L96 83 L50 110 L4 83 L4 29 Z' fill='none' stroke='%23789ECF' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 /* ---------- Page heroes (inner pages) ---------- */
