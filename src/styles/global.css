@@ -215,11 +215,43 @@ h1, h2, h3, h4 {
 
 .hero-home .actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 
-.hero-home .mark-wrap { display: grid; place-items: center; }
+.hero-home .mark-wrap {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+/* dark pool behind the mark only — the artwork screens over it, so its own
+   outer halo never darkens the page background */
+.hero-home .mark-wrap::before {
+  content: '';
+  position: absolute;
+  width: 92%;
+  aspect-ratio: 1;
+  margin-top: -35px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(0, 6, 20, 0.90) 0%,
+    rgba(0, 6, 20, 0.84) 14%,
+    rgba(0, 7, 22, 0.70) 22%,
+    rgba(0, 7, 22, 0.52) 29%,
+    rgba(0, 8, 24, 0.36) 35%,
+    rgba(0, 8, 24, 0.23) 41%,
+    rgba(0, 8, 24, 0.14) 47%,
+    rgba(0, 8, 24, 0.07) 54%,
+    rgba(0, 8, 24, 0.03) 62%,
+    rgba(0, 8, 24, 0.01) 72%,
+    transparent 84%);
+  filter: blur(14px);
+}
 
 .hero-home .mark {
-  width: min(300px, 70%);
-  filter: drop-shadow(0 0 34px rgba(120, 158, 207, 0.45)) drop-shadow(0 24px 40px rgba(2, 11, 24, 0.6));
+  position: relative;
+  width: 617px;
+  max-width: 135%;
+  margin-inline: -17%;
+  margin-top: -35px;
+  mix-blend-mode: screen;
 }
 
 @media (max-width: 820px) {
