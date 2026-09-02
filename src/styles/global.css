@@ -239,19 +239,19 @@ h1, h2, h3, h4 {
 .hero-home .mark-wrap { display: grid; place-items: center; }
 
 .hero-home .mark {
-  width: min(260px, 70%);
-  filter: drop-shadow(0 0 30px rgba(120, 158, 207, 0.32));
+  width: min(185px, 55%);
+  filter: drop-shadow(0 0 26px rgba(120, 158, 207, 0.22));
   opacity: 0;
   animation: mark-fade 2.4s ease-out 0.25s forwards;
 }
 
 @keyframes mark-fade {
   from { opacity: 0; }
-  to   { opacity: 0.82; }
+  to   { opacity: 0.58; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-home .mark { animation: none; opacity: 0.82; }
+  .hero-home .mark { animation: none; opacity: 0.58; }
 }
 
 @media (max-width: 820px) {
