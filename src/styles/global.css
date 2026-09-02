@@ -1,5 +1,5 @@
 /* ============================================
-   Sovrin Group — design system v2
+   Sovrin Group - design system v2
    Palette from website mockup v3; materials
    (glass / metal / glow) drawn from the logo.
    ============================================ */
@@ -62,7 +62,7 @@ body > main {
   flex-direction: column;
 }
 
-/* the gradient section stretches to meet the footer — no bare page
+/* the gradient section stretches to meet the footer - no bare page
    background showing beneath short pages */
 body > main > .dark-zone { flex: 1 0 auto; }
 
