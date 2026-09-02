@@ -55,7 +55,11 @@ import Bare from '../layouts/Bare.astro';
     height: auto;
     filter: drop-shadow(0 0 26px rgba(120, 158, 207, 0.22));
     opacity: 0;
-    animation: mark-fade 2.4s ease-out 0.25s forwards;
+  }
+
+  /* the fade only starts once everything else has loaded (class added by JS) */
+  .cs-mark.reveal-in {
+    animation: mark-fade 2.4s ease-out forwards;
   }
 
   @keyframes mark-fade {
@@ -64,7 +68,7 @@ import Bare from '../layouts/Bare.astro';
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cs-mark { animation: none; opacity: 0.58; }
+    .cs-mark, .cs-mark.reveal-in { animation: none; opacity: 0.58; }
   }
 
   .cs-wordmark {

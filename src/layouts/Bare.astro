@@ -24,5 +24,27 @@ const {
   </head>
   <body>
     <slot />
+    <script>
+      // Reveal the logo only after everything else has finished loading, so the
+      // fade is actually seen rather than happening during page render.
+      (function () {
+        var started = false;
+        function reveal() {
+          if (started) return;
+          started = true;
+          document
+            .querySelectorAll('.cs-mark, .hero-home .mark')
+            .forEach(function (el) { el.classList.add('reveal-in'); });
+        }
+        // a short beat after load so the fade reads as its own moment
+        if (document.readyState === 'complete') {
+          setTimeout(reveal, 250);
+        } else {
+          window.addEventListener('load', function () { setTimeout(reveal, 250); });
+        }
+        // safety net: never leave the logo invisible if load never fires
+        setTimeout(reveal, 5000);
+      })();
+    </script>
   </body>
 </html>
