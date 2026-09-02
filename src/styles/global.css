@@ -336,6 +336,9 @@ h1, h2, h3, h4 {
 
 .section { padding: 4.2rem 0; }
 
+/* less air between a page hero and the copy that follows it */
+.section-tight { padding-top: 1rem; }
+
 .section-head { margin-bottom: 2.2rem; }
 
 .section-head .kicker {
