@@ -5,7 +5,7 @@ import Bare from '../layouts/Bare.astro';
   <main class="cs">
     <div class="cs-inner">
       <div class="cs-mark-wrap">
-        <img class="cs-mark" src="/images/logo-ray-current.png" alt="Sovrin Group" />
+        <img class="cs-mark" src="/images/logo.png" alt="Sovrin Group" />
       </div>
 
       <div class="cs-wordmark">
@@ -50,42 +50,21 @@ import Bare from '../layouts/Bare.astro';
     gap: 0;
   }
 
-  /* dark pool sits behind the mark only; the artwork screens over it so
-     its own outer halo never darkens the page background */
-  .cs-mark-wrap {
-    position: relative;
-    display: grid;
-    place-items: center;
-    margin-bottom: -4%;
-  }
-
-  .cs-mark-wrap::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    /* long, eased tail: dark only in the middle, nothing detectable by the rim */
-    background: radial-gradient(circle,
-      rgba(0, 6, 20, 0.90) 0%,
-      rgba(0, 6, 20, 0.84) 14%,
-      rgba(0, 7, 22, 0.70) 22%,
-      rgba(0, 7, 22, 0.52) 29%,
-      rgba(0, 8, 24, 0.36) 35%,
-      rgba(0, 8, 24, 0.23) 41%,
-      rgba(0, 8, 24, 0.14) 47%,
-      rgba(0, 8, 24, 0.07) 54%,
-      rgba(0, 8, 24, 0.03) 62%,
-      rgba(0, 8, 24, 0.01) 72%,
-      transparent 84%);
-    filter: blur(14px);
-  }
-
   .cs-mark {
-    position: relative;
-    width: min(617px, 92vw);
+    width: min(165px, 38vw);
     height: auto;
-    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 34px rgba(120, 158, 207, 0.32));
+    opacity: 0;
+    animation: mark-fade 2.4s ease-out 0.25s forwards;
+  }
+
+  @keyframes mark-fade {
+    from { opacity: 0; }
+    to   { opacity: 0.82; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cs-mark { animation: none; opacity: 0.82; }
   }
 
   .cs-wordmark {
