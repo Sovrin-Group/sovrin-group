@@ -103,12 +103,19 @@ const navItems = [
         setMenu(!nav?.classList.contains('open'));
       });
 
-      // tapping anywhere else on the page closes it
-      document.addEventListener('click', (e) => {
+      // tapping or touching anywhere else closes it
+      function closeIfOutside(e) {
         if (!nav?.classList.contains('open')) return;
         if (nav.contains(e.target) || toggle?.contains(e.target)) return;
         setMenu(false);
-      });
+      }
+      document.addEventListener('click', closeIfOutside);
+      document.addEventListener('touchstart', closeIfOutside, { passive: true });
+
+      // a swipe is a scroll, not a click, so close on that too
+      window.addEventListener('scroll', () => {
+        if (nav?.classList.contains('open')) setMenu(false);
+      }, { passive: true });
 
       // and so does Escape, or picking a link
       document.addEventListener('keydown', (e) => {
