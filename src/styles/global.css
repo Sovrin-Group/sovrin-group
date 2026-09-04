@@ -255,7 +255,9 @@ h1, h2, h3, h4 {
 .hero-home .mark {
   /* the mark fills about half this canvas, so the box is sized double;
      brightness dims it while keeping it fully opaque */
-  width: min(370px, 95%);
+  width: 560px;
+  max-width: 145%;
+  margin-inline: -22%;
   filter: brightness(0.85);
   opacity: 0;
 }
@@ -278,7 +280,12 @@ h1, h2, h3, h4 {
 @media (max-width: 820px) {
   .hero-home .split { grid-template-columns: 1fr; }
   .hero-home .mark-wrap { order: -1; }
-  .hero-home .mark { width: 130px; }
+  /* the mark fills about half its canvas, so this box is sized double */
+  .hero-home .mark {
+    width: min(340px, 80vw);
+    max-width: none;
+    margin-inline: 0;
+  }
 }
 
 /* Glass pillar cards (dark zones) */
