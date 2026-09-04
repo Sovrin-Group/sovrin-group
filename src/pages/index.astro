@@ -5,7 +5,7 @@ import Bare from '../layouts/Bare.astro';
   <main class="cs">
     <div class="cs-inner">
       <div class="cs-mark-wrap">
-        <img class="cs-mark" src="/images/logo.png" alt="Sovrin Group" />
+        <img class="cs-mark" src="/images/logo-blackback.png" alt="Sovrin Group" />
       </div>
 
       <div class="cs-wordmark">
@@ -53,7 +53,9 @@ import Bare from '../layouts/Bare.astro';
   .cs-mark {
     width: min(185px, 45vw);
     height: auto;
-    filter: drop-shadow(0 0 26px rgba(120, 158, 207, 0.22));
+    /* brightness dims it while keeping it solid; opacity would let the
+       background show through the mark */
+    filter: brightness(0.68) drop-shadow(0 0 26px rgba(120, 158, 207, 0.22));
     opacity: 0;
   }
 
@@ -64,11 +66,11 @@ import Bare from '../layouts/Bare.astro';
 
   @keyframes mark-fade {
     from { opacity: 0; }
-    to   { opacity: 0.58; }
+    to   { opacity: 1; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cs-mark, .cs-mark.reveal-in { animation: none; opacity: 0.58; }
+    .cs-mark, .cs-mark.reveal-in { animation: none; opacity: 1; }
   }
 
   .cs-wordmark {
