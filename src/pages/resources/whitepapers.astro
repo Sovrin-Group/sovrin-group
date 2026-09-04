@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 
 const papers = await getCollection('whitepapers');
 
-// Newest first within each category
-papers.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+// oldest first, so readers follow the research in the order it was published
+papers.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
 
 // Preferred category display order; anything new lands at the end automatically.
 const categoryOrder = [
