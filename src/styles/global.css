@@ -66,6 +66,16 @@ body > main {
    background showing beneath short pages */
 body > main > .dark-zone { flex: 1 0 auto; }
 
+/* Fixed background layer. A positioned element is used instead of
+   background-attachment: fixed, which iOS Safari handles unreliably. */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('/images/hero-gradient.jpg') center / cover no-repeat;
+  pointer-events: none;
+}
+
 img { max-width: 100%; display: block; }
 
 a { color: var(--navy-700); }
@@ -187,9 +197,7 @@ h1, h2, h3, h4 {
 /* ---------- Dark surfaces ---------- */
 
 .dark-zone {
-  /* fixed + cover means the image is always sized to the viewport and framed
-     identically on every page and at every scroll position - it never shifts */
-  background: url('/images/hero-gradient.jpg') center / cover no-repeat fixed, var(--navy-950);
+  background: transparent;
   position: relative;
   color: var(--text-on-dark);
 }
