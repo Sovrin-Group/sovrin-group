@@ -1,0 +1,139 @@
+---
+import Bare from '../layouts/Bare.astro';
+---
+<Bare title="Sovrin Group | Coming Soon">
+  <main class="cs">
+    <div class="cs-inner">
+      <div class="cs-mark-wrap">
+        <img class="cs-mark" src="/images/logo-blackback.png" alt="Sovrin Group" />
+      </div>
+
+      <div class="cs-wordmark">
+        <span class="cs-primary">SOVRIN</span>
+        <span class="cs-secondary">GROUP</span>
+      </div>
+
+      <p class="cs-kicker">Coming soon</p>
+
+      <ul class="cs-taglines">
+        <li>Governed Identity.</li>
+        <li>Unified Architecture.</li>
+        <li>Deterministic Systems.</li>
+      </ul>
+    </div>
+
+    <footer class="cs-footer">
+      © {new Date().getFullYear()} Sovrin Group LLC. All Rights Reserved.
+    </footer>
+  </main>
+</Bare>
+
+<style>
+  .cs {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem 0;
+  }
+
+  .cs-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .cs-mark {
+    width: min(370px, 82vw);
+    height: auto;
+    /* brightness dims it while keeping it solid; opacity would let the
+       background show through the mark */
+    filter: brightness(0.85);
+    opacity: 0;
+  }
+
+  /* the fade only starts once everything else has loaded (class added by JS) */
+  .cs-mark.reveal-in {
+    animation: mark-fade 2.4s ease-out forwards;
+  }
+
+  @keyframes mark-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cs-mark, .cs-mark.reveal-in { animation: none; opacity: 1; }
+  }
+
+  .cs-wordmark {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.05;
+  }
+
+  .cs-primary {
+    font-family: var(--font-display);
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    /* optical centering: the tracking adds space after the final letter */
+    text-indent: 0.34em;
+    font-size: clamp(1.7rem, 5.2vw, 2.6rem);
+  }
+
+  .cs-secondary {
+    color: var(--blue-300);
+    font-weight: 400;
+    letter-spacing: 0.52em;
+    text-indent: 0.52em;
+    font-size: clamp(0.66rem, 1.7vw, 0.82rem);
+    margin-top: 0.5rem;
+  }
+
+  .cs-kicker {
+    margin-top: 2.4rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--blue-300);
+    padding: 0.55rem 1.4rem;
+    border: 1px solid rgba(160, 190, 240, 0.35);
+    border-radius: 999px;
+  }
+
+  .cs-taglines {
+    margin-top: 2.6rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem 2.6rem;
+    color: var(--text-on-dark);
+    font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+    font-weight: 500;
+  }
+
+  .cs-footer {
+    padding: 2rem 0 1.6rem;
+    color: var(--text-on-dark-soft);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 560px) {
+    .cs-taglines { gap: 0.55rem; flex-direction: column; }
+    .cs-kicker { margin-top: 2rem; }
+  }
+</style>

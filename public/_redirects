@@ -1,12 +1,1 @@
-# Serve the blocking robots.txt only on the temporary Netlify address;
-# the real domain automatically gets the normal (indexable) one.
-https://sovrin-group.netlify.app/robots.txt /robots-staging.txt 200!
-
-# Pre-launch: only the Coming Soon page is public.
-# The inner pages stay built and ready — remove these four lines to reveal them.
-# /admin and /whitepapers are deliberately not matched: the content manager
-# must keep working while the public site is just the cover page.
-/about/*      / 302!
-/solutions/*  / 302!
-/resources/*  / 302!
-/contact/*    / 302!
+# PREVIEW BRANCH ONLY - inner pages reachable for client review.
