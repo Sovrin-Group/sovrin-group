@@ -255,9 +255,9 @@ h1, h2, h3, h4 {
 .hero-home .mark {
   /* the mark fills about half this canvas, so the box is sized double;
      brightness dims it while keeping it fully opaque */
-  width: 560px;
-  max-width: 145%;
-  margin-inline: -22%;
+  width: 420px;
+  max-width: 118%;
+  margin-inline: -9%;
   filter: brightness(0.85);
   opacity: 0;
 }
@@ -282,7 +282,7 @@ h1, h2, h3, h4 {
   .hero-home .mark-wrap { order: -1; }
   /* the mark fills about half its canvas, so this box is sized double */
   .hero-home .mark {
-    width: min(340px, 80vw);
+    width: min(270px, 66vw);
     max-width: none;
     margin-inline: 0;
   }
