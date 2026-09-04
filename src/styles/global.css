@@ -108,7 +108,13 @@ h1, h2, h3, h4 {
 
 .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
 
-.brand img { width: 40px; height: auto; filter: drop-shadow(0 0 8px rgba(120, 158, 207, 0.35)); }
+.brand img {
+  width: 40px;
+  height: auto;
+  /* matches the hero mark's softened strength */
+  opacity: 0.58;
+  filter: drop-shadow(0 0 8px rgba(120, 158, 207, 0.28));
+}
 
 .brand .wordmark { display: flex; flex-direction: column; line-height: 1.05; }
 
