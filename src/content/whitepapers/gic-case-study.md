@@ -1,7 +1,7 @@
 ---
-title: "GIC Case Study"
-category: "Governed Identity"
-summary: "A practical case study applying the Governed Identity Continuum to a real-world governed AI deployment."
-date: 2026-06-25
-pdf: "/whitepapers/gic-case-study.pdf"
+title: "GIC Series #4 of 4: The Sandbox Is Already Open. Now What?"
+category: Governed Identity
+summary: Summary goes here.
+date: 2026-05-01
+pdf: /whitepapers/gic-series-4-of-4-the-sandbox-is-already-open-8.26.2026-j.-evans-.pdf
 ---
