@@ -187,7 +187,9 @@ h1, h2, h3, h4 {
 /* ---------- Dark surfaces ---------- */
 
 .dark-zone {
-  background: url('/images/hero-gradient.jpg') center / cover no-repeat, var(--navy-950);
+  /* fixed + cover means the image is always sized to the viewport and framed
+     identically on every page and at every scroll position - it never shifts */
+  background: url('/images/hero-gradient.jpg') center / cover no-repeat fixed, var(--navy-950);
   position: relative;
   color: var(--text-on-dark);
 }
@@ -196,7 +198,6 @@ h1, h2, h3, h4 {
 
 /* full-length dark page: gradient fixed so it covers however tall the page runs */
 .page-dark {
-  background-attachment: fixed;
   min-height: 100%;
 }
 
