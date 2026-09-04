@@ -253,8 +253,10 @@ h1, h2, h3, h4 {
 .hero-home .mark-wrap { display: grid; place-items: center; }
 
 .hero-home .mark {
-  width: min(185px, 55%);
-  filter: drop-shadow(0 0 26px rgba(120, 158, 207, 0.22));
+  /* the mark fills about half this canvas, so the box is sized double;
+     brightness dims it while keeping it fully opaque */
+  width: min(370px, 95%);
+  filter: brightness(0.85);
   opacity: 0;
 }
 
@@ -265,12 +267,12 @@ h1, h2, h3, h4 {
 
 @keyframes mark-fade {
   from { opacity: 0; }
-  to   { opacity: 0.58; }
+  to   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-home .mark,
-  .hero-home .mark.reveal-in { animation: none; opacity: 0.58; }
+  .hero-home .mark.reveal-in { animation: none; opacity: 1; }
 }
 
 @media (max-width: 820px) {
