@@ -120,14 +120,14 @@ h1, h2, h3, h4 {
 
 .brand .wordmark .primary {
   font-family: var(--font-display);
-  color: var(--white);
+  color: rgba(233, 238, 248, 0.76);
   font-weight: 600;
   letter-spacing: 0.3em;
   font-size: 1.02rem;
 }
 
 .brand .wordmark .secondary {
-  color: var(--blue-300);
+  color: rgba(233, 238, 248, 0.72);
   font-weight: 400;
   letter-spacing: 0.46em;
   font-size: 0.6rem;
