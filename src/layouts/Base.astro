@@ -92,10 +92,31 @@ const navItems = [
     <script>
       const toggle = document.querySelector('.nav-toggle');
       const nav = document.querySelector('.site-nav');
-      toggle?.addEventListener('click', () => {
-        const open = nav?.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(!!open));
+
+      function setMenu(open) {
+        nav?.classList.toggle('open', open);
+        toggle?.setAttribute('aria-expanded', String(open));
+      }
+
+      toggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setMenu(!nav?.classList.contains('open'));
       });
+
+      // tapping anywhere else on the page closes it
+      document.addEventListener('click', (e) => {
+        if (!nav?.classList.contains('open')) return;
+        if (nav.contains(e.target) || toggle?.contains(e.target)) return;
+        setMenu(false);
+      });
+
+      // and so does Escape, or picking a link
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMenu(false);
+      });
+      nav?.querySelectorAll('a').forEach((a) =>
+        a.addEventListener('click', () => setMenu(false))
+      );
 
       // Gentle scroll-reveal on cards; no-ops for reduced-motion users.
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
