@@ -1,7 +1,7 @@
 ---
-title: "NATVs: Non Adversarial Threat Vectors"
-category: "Governed Identity"
-summary: "Identifying and mitigating threat vectors that arise from drift and misalignment rather than adversarial intent."
-date: 2026-08-05
-pdf: "/whitepapers/natvs-non-adversarial-threat-vectors.pdf"
+title: "NATV: Non-Adversarial Threat Vector"
+category: Governed Identity
+summary: A threat doesn't have to be on purpose to cause damage.
+date: 2026-08-16
+pdf: /whitepapers/gic-series-1-of-4-natvs.pdf
 ---
