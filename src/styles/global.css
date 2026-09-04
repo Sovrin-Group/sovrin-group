@@ -127,7 +127,7 @@ h1, h2, h3, h4 {
 }
 
 .brand .wordmark .secondary {
-  color: rgba(233, 238, 248, 0.72);
+  color: var(--blue-300);
   font-weight: 400;
   letter-spacing: 0.46em;
   font-size: 0.6rem;
