@@ -1,21 +1,18 @@
 # ============================================================
-# Sovrin Group content manager configuration
+# Sovrin Group content manager configuration (Sveltia CMS)
 #
-# "backend" controls where saved content goes.
-#   - While developing locally, local_backend below lets the
-#     admin write straight to the files on this computer
-#     (run: npx decap-server in the project folder).
-#   - When deployed, the github backend saves through GitHub;
-#     the repo line gets filled in at deploy time.
+# Saved content is committed straight to the GitHub repo below.
+#
+# For local editing, open /admin/index.html on the dev server in
+# Chrome or Edge and choose "Work with Local Repository" - Sveltia
+# reads and writes the files directly via the File System Access
+# API. It does not use decap-server, and ignores local_backend.
 # ============================================================
 
 backend:
   name: github
   repo: Sovrin-Group/sovrin-group
   branch: main
-
-# Allow the local proxy during development on this machine.
-local_backend: true
 
 # Uploaded PDFs are stored here in the project…
 media_folder: "public/whitepapers"
