@@ -17,8 +17,6 @@ backend:
 # Allow the local proxy during development on this machine.
 local_backend: true
 
-# Sveltia authenticates with GitHub directly, so no OAuth proxy is required.
-
 # Uploaded PDFs are stored here in the project…
 media_folder: "public/whitepapers"
 # …and served from this URL path on the live site.
