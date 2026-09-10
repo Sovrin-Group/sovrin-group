@@ -1,10 +1,10 @@
-# Sovrin Group — Website
+# Sovrin Group Website
 
 The official website of Sovrin Group LLC: a static [Astro](https://astro.build)
 site with a [Decap CMS](https://decapcms.org) content manager for self-serve
 white paper publishing.
 
-**📘 Start with [HANDOFF.md](HANDOFF.md)** — the owner's handbook: how the site
+**📘 Start with [HANDOFF.md](HANDOFF.md)**, the owner's handbook: how the site
 works, how to publish, who holds which keys, recovery instructions, and the
 launch checklist.
 

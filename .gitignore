@@ -10,6 +10,6 @@ logo_ray*.jpg
 logo.png
 Firefly_*.jpg
 
-# Local scratch pages — never publish these
+# Local scratch pages, never publish these
 src/pages/blackhole.astro
 src/pages/full-home.astro

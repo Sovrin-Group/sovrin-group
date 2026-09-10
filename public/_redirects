@@ -3,7 +3,7 @@
 https://sovrin-group.netlify.app/robots.txt /robots-staging.txt 200!
 
 # Pre-launch: only the Coming Soon page is public.
-# The inner pages stay built and ready — remove these four lines to reveal them.
+# The inner pages stay built and ready. Remove these four lines to reveal them.
 # /admin and /whitepapers are deliberately not matched: the content manager
 # must keep working while the public site is just the cover page.
 /about/*      / 302!

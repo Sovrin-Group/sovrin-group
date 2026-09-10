@@ -13,6 +13,11 @@ backend:
   name: github
   repo: Sovrin-Group/sovrin-group
   branch: main
+  # OAuth sign-in server (run by Blake at CruTech). Sveltia sends the
+  # editor to <base_url>/auth to start the GitHub handshake, and GitHub
+  # returns to <base_url>/callback. If sign-in ever breaks, this line and
+  # the callback URL on the GitHub OAuth app have to agree.
+  base_url: https://cms-auth.crutechmn.com
 
 # Uploaded PDFs are stored here in the project…
 media_folder: "public/whitepapers"
@@ -31,7 +36,7 @@ collections:
     delete: true
     slug: "{{slug}}"
     sortable_fields: ["date", "title", "category"]
-    summary: "{{title}} — {{category}}"
+    summary: "{{title}} | {{category}}"
     fields:
       - { label: "Title", name: "title", widget: "string", hint: "The white paper's full title as it should appear on the site." }
       - label: "Category"
