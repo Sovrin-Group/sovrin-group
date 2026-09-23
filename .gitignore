@@ -13,3 +13,11 @@ Firefly_*.jpg
 # Local scratch pages, never publish these
 src/pages/blackhole.astro
 src/pages/full-home.astro
+
+# Randy's own working files. These live on his Mac only and must never be
+# committed: screen recordings, screenshots, spreadsheets, and the folders
+# of white papers Judi sends (those reach the site through the CMS instead).
+WPs - */
+Screenshot *.png
+*.mp4
+*.xlsx
