@@ -15,9 +15,11 @@ import Bare from '../layouts/Bare.astro';
 
       <p class="cs-kicker">Coming soon</p>
 
+      <a class="cs-contact" href="mailto:info@sovringroup.com">CONTACT US</a>
+
       <ul class="cs-taglines">
         <li>Governed Identity.</li>
-        <li>Unified Architecture.</li>
+        <li>Unified Identity.</li>
         <li>Deterministic Systems.</li>
       </ul>
     </div>
@@ -109,9 +111,28 @@ import Bare from '../layouts/Bare.astro';
     font-size: 0.76rem;
     font-weight: 600;
     color: var(--blue-300);
+  }
+
+  /* the outlined pill that used to sit around "Coming soon" */
+  .cs-contact {
+    margin-top: 2.6rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--blue-300);
+    text-decoration: none;
     padding: 0.55rem 1.4rem;
     border: 1px solid rgba(160, 190, 240, 0.35);
     border-radius: 999px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .cs-contact:hover,
+  .cs-contact:focus-visible {
+    color: var(--white);
+    border-color: rgba(160, 190, 240, 0.7);
   }
 
   .cs-taglines {
