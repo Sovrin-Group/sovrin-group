@@ -119,4 +119,12 @@ const principles = [
   /* the version Randy saw and approved: 3rem under the intro, none above the cards */
   .hero-flush { padding-bottom: 3rem; }
   .section-flush { padding-top: 0; }
+
+  /* wider intro so the first line ends on "governance," and the second
+     paragraph stays on one line instead of dropping "design." alone */
+  .hero-page .lede { max-width: 780px; }
+
+  /* one blank line between the headline and the copy:
+     the existing 16px plus one line of this text (27.72px) */
+  .hero-page h1 + .lede { margin-top: 43.72px; }
 </style>
