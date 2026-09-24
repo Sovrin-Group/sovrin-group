@@ -534,6 +534,17 @@ a.card:hover {
 .tenet h3 { grid-column: 2; font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--white); }
 .tenet p { grid-column: 2; color: var(--text-on-dark-soft); font-size: 0.95rem; }
 
+/* Principles page: each principle reuses the tenet card, with room for its list */
+.principle-body { grid-column: 2; }
+.principle-body h2 { color: var(--white); font-size: 1.2rem; margin-bottom: 0.6rem; }
+.principle-body .principle-governs { margin-top: 0.9rem; color: var(--white); font-weight: 500; }
+.principle-body ul { margin: 0.4rem 0 0 1.2rem; color: var(--text-on-dark-soft); font-size: 0.95rem; }
+.principle-body li + li { margin-top: 0.3rem; }
+.principle-body .principle-close { margin-top: 0.9rem; color: var(--white); }
+.principle-closing { margin-top: 3rem; }
+.principle-closing h2:first-child { margin-top: 0; }
+.doctrine { color: var(--white); font-weight: 500; }
+
 /* ---------- White papers ---------- */
 
 .wp-category { margin-top: 2.8rem; }
