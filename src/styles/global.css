@@ -514,6 +514,8 @@ a.card:hover {
 .prose > * { max-width: 780px; }
 .doctrine { max-width: none; }
 .prose p + p { margin-top: 1rem; }
+/* hand placed line breaks, only where the line is wide enough to want them */
+@media (max-width: 900px) { .wide-break { display: none; } }
 .prose h2 { margin: 2.2rem 0 0.8rem; font-size: 1.45rem; }
 .prose ul { margin: 1rem 0 1rem 1.3rem; }
 .prose li + li { margin-top: 0.45rem; }
