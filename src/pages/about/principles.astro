@@ -63,7 +63,7 @@ const principles = [
 ---
 <Base title="Principles | Sovrin Group" section="about">
   <div class="dark-zone page-dark">
-  <section class="hero-page">
+  <section class="hero-page hero-flush">
     <div class="container">
       <p class="kicker">About · Principles</p>
       <h1>The governing laws that shape every Sovrin system.</h1>
@@ -76,7 +76,7 @@ const principles = [
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-flush">
     <div class="container">
       <div class="tenet-list">
         {principles.map((p) => (
@@ -105,8 +105,18 @@ const principles = [
         <p>
           These principles govern every Sovrin artifact, every model, every substrate‑layer design, and every continuity framework. They are the foundation of SIG‑Eighty kiln‑mode and the governed reasoning models that support it.
         </p>
+
+        <p style="margin-top: 2rem;">
+          <a class="btn btn-ghost" href="/about/">Back to About</a>
+        </p>
       </div>
     </div>
   </section>
   </div>
 </Base>
+
+<style>
+  /* the version Randy saw and approved: 3rem under the intro, none above the cards */
+  .hero-flush { padding-bottom: 3rem; }
+  .section-flush { padding-top: 0; }
+</style>
