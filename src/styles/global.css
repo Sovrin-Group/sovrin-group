@@ -337,8 +337,10 @@ h1, h2, h3, h4 {
 /* one blank line between headline and copy; no gap before the section below */
 .hero-page h1 + .lede { margin-top: 43.72px; }
 .hero-page + .section { padding-top: 0; }
-/* the Principles cards keep the gap Randy approved */
-.hero-page + .section-cards { padding-top: 4.28px; }
+/* where a subtitle sits under the headline, one line of space below it */
+.hero-page:has(.lede) { padding-bottom: 27.72px; }
+/* the Principles cards keep the 48px gap already approved */
+.hero-page + .section-cards { padding-top: 20.28px; }
 
 .hero-page .kicker {
   font-family: var(--font-display);
