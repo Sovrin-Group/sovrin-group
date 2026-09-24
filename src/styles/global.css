@@ -332,7 +332,13 @@ h1, h2, h3, h4 {
 
 /* ---------- Page heroes (inner pages) ---------- */
 
-.hero-page { padding: 4.2rem 0 3.6rem; }
+.hero-page { padding: 4.2rem 0 43.72px; }
+
+/* one blank line between headline and copy; no gap before the section below */
+.hero-page h1 + .lede { margin-top: 43.72px; }
+.hero-page + .section { padding-top: 0; }
+/* the Principles cards keep the gap Randy approved */
+.hero-page + .section-cards { padding-top: 4.28px; }
 
 .hero-page .kicker {
   font-family: var(--font-display);
@@ -351,7 +357,7 @@ h1, h2, h3, h4 {
 
 .hero-page .lede {
   margin-top: 1rem;
-  max-width: 720px;
+  max-width: 780px;
   color: var(--text-on-dark-soft);
   font-size: 1.05rem;
 }
@@ -398,6 +404,7 @@ h1, h2, h3, h4 {
 }
 
 .card {
+  position: relative;
   background: rgba(233, 238, 248, 0.05);
   border: 1px solid rgba(160, 190, 240, 0.2);
   border-radius: var(--radius);
@@ -434,6 +441,8 @@ a.card:hover {
 
 /* Invisible spacer so cards without a badge align with cards that have one */
 .badge-ghost { visibility: hidden; }
+
+.card .badge { position: absolute; top: 1.15rem; right: 1.2rem; }
 
 .badge {
   display: inline-block;
@@ -498,7 +507,10 @@ a.card:hover {
 
 /* ---------- Prose ---------- */
 
-.prose { max-width: 760px; color: var(--text-on-dark-soft); }
+/* copy keeps the container's left edge; the measure moves onto the text */
+.prose { max-width: none; color: var(--text-on-dark-soft); }
+.prose > * { max-width: 780px; }
+.doctrine { max-width: none; }
 .prose p + p { margin-top: 1rem; }
 .prose h2 { margin: 2.2rem 0 0.8rem; font-size: 1.45rem; }
 .prose ul { margin: 1rem 0 1rem 1.3rem; }
@@ -658,10 +670,9 @@ a.card:hover {
 /* ---------- Dark band CTA ---------- */
 
 .band-dark {
-  background:
-    radial-gradient(120% 160% at 85% 10%, rgba(21, 45, 121, 0.75), transparent 55%),
-    linear-gradient(140deg, var(--navy-900), var(--navy-950));
-  border: 1px solid rgba(120, 158, 207, 0.22);
+  background: rgba(233, 238, 248, 0.05);
+  border: 1px solid rgba(160, 190, 240, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
   color: var(--text-on-dark);
   border-radius: var(--radius);
   padding: 2.6rem 2.4rem;
