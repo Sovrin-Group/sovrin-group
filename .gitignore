@@ -10,9 +10,8 @@ logo_ray*.jpg
 logo.png
 Firefly_*.jpg
 
-# Local scratch pages, never publish these
+# Local scratch page, never publish this
 src/pages/blackhole.astro
-src/pages/full-home.astro
 
 # Randy's own working files. These live on his Mac only and must never be
 # committed: screen recordings, screenshots, spreadsheets, and the folders
