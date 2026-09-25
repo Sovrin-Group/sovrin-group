@@ -446,6 +446,14 @@ a.card:hover {
 
 .card .badge { position: absolute; top: 1.15rem; right: 1.2rem; }
 
+/* Cards sit at the same height and start at the same point on every page,
+   so they do not shift as you move between sections. Wide screens only;
+   on a phone the cards stack and should size to their own content. */
+@media (min-width: 700px) {
+  .page-dark:has(.card-grid) .hero-page { min-height: 316px; }
+  .card { min-height: 226px; }
+}
+
 .badge {
   display: inline-block;
   background: rgba(120, 158, 207, 0.18);
