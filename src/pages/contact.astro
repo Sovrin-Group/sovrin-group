@@ -39,22 +39,53 @@ import Base from '../layouts/Base.astro';
           <input type="email" name="email" required autocomplete="email" />
         </label>
 
+        <p class="hp" aria-hidden="true">
+          <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
         <button class="btn" type="submit">Send</button>
       </form>
     </div>
   </section>
   </div>
 
+  <style>
+    .hp {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+
   <script>
     const form = document.getElementById('callback-form');
 
     if (form) {
-      form.addEventListener('submit', (event) => {
+      form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        const button = form.querySelector('button[type=submit]');
         const data = new FormData(form);
         const field = (key) => String(data.get(key) ?? '').trim();
 
+        button.disabled = true;
+        button.textContent = 'Sending';
+
+        // First choice: hand it to the server, which emails it to Sovrin Group.
+        try {
+          const response = await fetch('/api/contact', { method: 'POST', body: data });
+          if (response.ok) {
+            window.location.assign('/contact/thanks/');
+            return;
+          }
+        } catch {
+          // no answer from the server, fall through
+        }
+
+        // The server side is not switched on yet, or it failed. Hand the
+        // message to the visitor's own mail program so nothing is lost.
         const body = [
           'Name: ' + field('name'),
           'Organization: ' + (field('organization') || 'not given'),
@@ -68,8 +99,6 @@ import Base from '../layouts/Base.astro';
           '?subject=' + encodeURIComponent('Callback request: ' + field('name')) +
           '&body=' + encodeURIComponent(body + '\r\n');
 
-        // Hand the message to the visitor's mail program, then move on to the
-        // thank-you page. The short wait lets the mail program open first.
         window.location.href = href;
         window.setTimeout(() => { window.location.assign('/contact/thanks/'); }, 500);
       });
