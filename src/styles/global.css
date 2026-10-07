@@ -726,3 +726,10 @@ a.card:hover {
 
 .site-footer a { color: var(--blue-300); text-decoration: none; font-size: calc(0.82rem + 2pt); }
 .site-footer a:hover { text-decoration: underline; }
+
+/* Buttons to the other pages in a section (About, Solutions) */
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}

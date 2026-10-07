@@ -1,107 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Contact | Sovrin Group" section="contact">
+<Base title="Let's Talk | Sovrin Group" section="contact">
   <div class="dark-zone page-dark">
   <section class="hero-page">
     <div class="container">
-      <p class="kicker">Contact</p>
-      <h1>We'll call you back at your convenience.</h1>
+      <h1>Start the Conversation</h1>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <form class="contact-form" id="callback-form">
-        <label>
-          First &amp; Last Name
-          <input type="text" name="name" required autocomplete="name" />
-        </label>
-
-        <label>
-          Organization
-          <input type="text" name="organization" autocomplete="organization" />
-        </label>
-
-        <div class="form-row">
-          <label>
-            Preferred Callback Number
-            <input type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required autocomplete="tel" />
-          </label>
-          <label>
-            Preferred Callback Day / Time
-            <input type="text" name="callback_time" placeholder="mm/dd, hh:mm" />
-          </label>
-        </div>
-
-        <label>
-          Email
-          <input type="email" name="email" required autocomplete="email" />
-        </label>
-
-        <p class="hp" aria-hidden="true">
-          <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-        </p>
-
-        <button class="btn" type="submit">Send</button>
-      </form>
+    <div class="container prose">
+      <p>
+        <a class="btn" href="mailto:talk@sovringroup.com?subject=Let%27s%20talk">talk@sovringroup.com</a>
+      </p>
     </div>
   </section>
   </div>
-
-  <style>
-    .hp {
-      position: absolute;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-  </style>
-
-  <script>
-    const form = document.getElementById('callback-form');
-
-    if (form) {
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const button = form.querySelector('button[type=submit]');
-        const data = new FormData(form);
-        const field = (key) => String(data.get(key) ?? '').trim();
-
-        button.disabled = true;
-        button.textContent = 'Sending';
-
-        // First choice: hand it to the server, which emails it to Sovrin Group.
-        try {
-          const response = await fetch('/api/contact', { method: 'POST', body: data });
-          if (response.ok) {
-            window.location.assign('/contact/thanks/');
-            return;
-          }
-        } catch {
-          // no answer from the server, fall through
-        }
-
-        // The server side is not switched on yet, or it failed. Hand the
-        // message to the visitor's own mail program so nothing is lost.
-        const body = [
-          'Name: ' + field('name'),
-          'Organization: ' + (field('organization') || 'not given'),
-          'Preferred callback number: ' + field('phone'),
-          'Preferred callback day / time: ' + (field('callback_time') || 'no preference'),
-          'Email: ' + field('email'),
-        ].join('\r\n');
-
-        const href =
-          'mailto:info@sovringroup.com' +
-          '?subject=' + encodeURIComponent('Callback request: ' + field('name')) +
-          '&body=' + encodeURIComponent(body + '\r\n');
-
-        window.location.href = href;
-        window.setTimeout(() => { window.location.assign('/contact/thanks/'); }, 500);
-      });
-    }
-  </script>
 </Base>

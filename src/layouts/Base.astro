@@ -4,20 +4,21 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  section?: 'about' | 'solutions' | 'resources' | 'contact' | 'home';
+  section?: 'about' | 'solutions' | 'services' | 'resources' | 'contact' | 'home';
 }
 
 const {
   title,
-  description = 'Sovrin Group - Unified Identity. Deterministic Systems. Governed Continuity.',
+  description = 'Sovrin Group - Deterministic Systems. Unified Identity. Governed Continuity.',
   section = 'home',
 } = Astro.props;
 
 const navItems = [
   { label: 'About', href: '/about/', key: 'about' },
   { label: 'Solutions', href: '/solutions/', key: 'solutions' },
-  { label: 'Resources', href: '/resources/', key: 'resources' },
-  { label: 'Contact', href: '/contact/', key: 'contact' },
+  { label: 'Services', href: '/services/', key: 'services' },
+  { label: 'Resources', href: '/resources/whitepapers/', key: 'resources' },
+  { label: "Let's Talk", href: '/contact/', key: 'contact' },
 ];
 ---
 <html lang="en">
