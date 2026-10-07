@@ -1,6 +1,6 @@
 ---
 title: "The Lattice Layer"
-category: Unified Architecture
+category: Unified Identity
 summary: Where governed constructs propagate, and propagation becomes system behavior.
 date: 2026-09-13
 pdf: /whitepapers/the-lattice-layer.pdf

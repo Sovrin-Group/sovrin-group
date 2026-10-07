@@ -43,8 +43,8 @@ collections:
         name: "category"
         widget: "select"
         options:
-          - "Unified Architecture"
-          - "Governed Identity"
+          - "Unified Identity"
+          - "Governed Continuity"
           - "Other Research"
         hint: "Which section of the White Papers page this appears under."
       - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the card." }
