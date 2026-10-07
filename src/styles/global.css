@@ -325,13 +325,13 @@ sup.tm { font-size: 0.45em; line-height: 0; vertical-align: super; margin-left: 
 .pillar p { color: var(--text-on-dark-soft); font-size: 0.94rem; }
 
 .pillar .glyph {
-  width: 62px;
+  width: 68px;
   height: 68px;
-  padding: 19px 16px;
+  padding: 19px;
   box-sizing: border-box;
   margin-bottom: 0.5rem;
   object-fit: contain;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 L96 29 L96 83 L50 110 L4 83 L4 29 Z' fill='none' stroke='%23789ECF' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 100'%3E%3Cpath d='M2 50 L29 4 L83 4 L110 50 L83 96 L29 96 Z' fill='none' stroke='%23789ECF' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 /* ---------- Page heroes (inner pages) ---------- */
@@ -435,12 +435,12 @@ a.card:hover {
 .card .badge { align-self: flex-start; }
 
 .card-icon {
-  width: 62px;
+  width: 68px;
   height: 68px;
   display: grid;
   place-items: center;
   margin-bottom: 0.5rem;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 L96 29 L96 83 L50 110 L4 83 L4 29 Z' fill='none' stroke='%23789ECF' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 100'%3E%3Cpath d='M2 50 L29 4 L83 4 L110 50 L83 96 L29 96 Z' fill='none' stroke='%23789ECF' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .card-icon img { width: 30px; height: 30px; object-fit: contain; }
