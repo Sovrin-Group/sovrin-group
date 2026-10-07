@@ -4,7 +4,7 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  section?: 'about' | 'solutions' | 'services' | 'resources' | 'contact' | 'home';
+  section?: 'about' | 'solutions' | 'resources' | 'contact' | 'home';
 }
 
 const {
@@ -16,7 +16,6 @@ const {
 const navItems = [
   { label: 'About', href: '/about/', key: 'about' },
   { label: 'Solutions', href: '/solutions/', key: 'solutions' },
-  { label: 'Services', href: '/services/', key: 'services' },
   { label: 'Resources', href: '/resources/whitepapers/', key: 'resources' },
   { label: "Let's Talk", href: '/contact/', key: 'contact' },
 ];
