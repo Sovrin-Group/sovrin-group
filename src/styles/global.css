@@ -126,6 +126,10 @@ h1, h2, h3, h4 {
   filter: drop-shadow(0 0 8px rgba(120, 158, 207, 0.28));
 }
 
+/* Trademark mark: small, raised, and not stretched by the letterspacing around it */
+sup.tm { font-size: 0.45em; line-height: 0; vertical-align: super; margin-left: 0.08em; letter-spacing: 0; font-weight: 400; }
+.site-footer .tm-notice { margin: 0; }
+
 .brand .wordmark { display: flex; flex-direction: column; line-height: 1.05; }
 
 .brand .wordmark .primary {
