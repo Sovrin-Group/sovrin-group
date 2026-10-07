@@ -455,6 +455,8 @@ a.card:hover {
    on a phone the cards stack and should size to their own content. */
 @media (min-width: 700px) {
   .page-dark:has(.card-grid) .hero-page { min-height: 316px; }
+  /* Solutions has paragraphs between the heading and its cards, so nothing to line up with */
+  .page-dark.page-flow:has(.card-grid) .hero-page { min-height: 0; }
   .card { min-height: 226px; }
 }
 
@@ -534,6 +536,9 @@ a.card:hover {
 .prose li { color: var(--text-on-dark-soft); }
 .prose strong { color: var(--white); }
 .prose h2 { color: var(--white); }
+/* sub-heading inside page text (Common Deliverables): white, a line of air above, tight to its bullets */
+.prose h3 { color: var(--white); margin: 1.6rem 0 0.35rem; }
+.prose h3 + ul { margin-top: 0.35rem; }
 
 .tenet-list { display: grid; gap: 1.1rem; margin-top: 0.4rem; }
 
