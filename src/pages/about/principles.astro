@@ -1,63 +1,74 @@
 ---
 import Base from '../../layouts/Base.astro';
 
-// Text is the client's own, copied exactly as she supplied it (September 2026),
-// including her punctuation and her non-breaking hyphens.
+// Text is the client's own, copied exactly as she supplied it (October 2026),
+// including her punctuation, em dashes and non-breaking hyphens.
 const principles = [
   {
-    title: '1. Identity Is the Anchor of Every System',
-    body: 'Identity is the invariant that every governed system must inherit from. It establishes continuity across people, processes, data, and AI substrates. When identity is fractured, systems drift, governance collapses, and risk compounds.',
+    title: `1. Identity Is the Anchor of Every System`,
+    body: `Identity is the invariant every governed system must inherit from. It establishes continuity across people, processes, data, and intelligent systems. When identity fractures, systems drift, governance collapses, and risk compounds.`,
     governs: [
-      'identity continuity',
-      'credentialing and trust frameworks',
-      'cross‑domain identity integration',
-      'substrate‑layer inheritance rules',
+      `identity continuity`,
+      `credentialing and trust frameworks`,
+      `cross‑domain identity integration`,
+      `substrate‑layer inheritance rules`,
     ],
-    close: 'Identity is the upstream operator. Everything else is downstream.',
+    close: `Identity is the upstream operator. Everything else is downstream.`,
   },
   {
-    title: "2. Governance Works Best When It's Designed, Not Enforced",
-    body: 'Governance is an architectural function — not a policing function. When governance is embedded into the substrate, systems behave correctly by default. When governance is bolted on, systems fracture, drift, and fail under load.',
+    title: `2. Governance Works Only When It's Architectural, Not After‑the‑Fact`,
+    body: `Governance is a design property, not an enforcement activity. Systems behave correctly when governance is embedded into the substrate. When governance is bolted on, systems drift, fracture, and fail under load.`,
     governs: [
-      'governed reasoning models',
-      'deterministic system design',
-      'audit‑grade controls',
-      'continuity frameworks',
+      `governed reasoning substrates`,
+      `deterministic system behavior`,
+      `audit‑grade reconstruction and custody`,
+      `continuity and non‑fracture frameworks`,
     ],
-    close: 'Governance must be structural, not reactive.',
+    close: `Governance must be structural, proactive, and unavoidable.`,
   },
   {
-    title: '3. People and AI Build Better Systems Together Than Either Can Alone',
-    body: 'AI amplifies human capability; humans anchor AI to meaning, context, and accountability. The strongest systems are co‑designed: human‑defined, AI‑executed, and substrate‑governed.',
+    title: `3. Trust is the apex objective.`,
+    body: `Trust is a human outcome, not a technical feature. People trust systems when those systems behave consistently, transparently, and without drift. Trust emerges when the architecture makes correctness the default and eliminates the need for belief, persuasion, or reassurance.`,
     governs: [
-      'human‑defined governance states',
-      'deterministic AI execution',
-      'substrate‑layer alignment',
-      'non‑drifting operational behavior',
+      `trust compliance (T=1)`,
+      `transparent constraint surfaces`,
+      `human‑interpretable reasoning`,
+      `verifiable continuity and custody`,
     ],
-    close: 'AI does not replace humans. AI extends governed human capability.',
+    close: `Trust must be architected, not requested.`,
   },
   {
-    title: '4. Clarity Creates Trust; Complexity Creates Risk',
-    body: 'Complexity is the enemy of continuity. Clear architectures, clear identity models, and clear governance rules produce predictable systems. Ambiguity produces drift, brittleness, and emergent failure modes.',
+    title: `4. Complexity Is the Enemy of Continuity`,
+    body: `Complexity creates drift, brittleness, and emergent failure modes. Clear architectures, clear identity models, and clear governance rules produce predictable, reconstructable systems. Clarity is not aesthetic — it is operational safety.`,
     governs: [
-      'architecture simplification',
-      'continuity surfaces',
-      'metadata governance',
-      'classification frameworks',
+      `architecture simplification`,
+      `continuity surfaces`,
+      `metadata governance`,
+      `classification frameworks`,
     ],
-    close: 'Clarity is a security control.',
+    close: `Clarity is a security control.`,
   },
   {
-    title: '5. Good Systems Stay Aligned as They Grow',
-    body: 'Scale should never break alignment. Systems must maintain continuity across identity, data, and operational substrates — even as they expand. Alignment is not a feature; it is a structural requirement.',
+    title: `5. People and AI Build Better Systems Together Than Either Can Alone`,
+    body: `AI amplifies human capability; humans anchor AI to meaning, context, and accountability. The strongest systems are co‑designed: human‑defined, AI‑executed, and substrate‑governed. This prevents drift, preserves intent, and ensures deterministic behavior.`,
     governs: [
-      'substrate‑layer architecture',
-      'cross‑system integration',
-      'retention governance',
-      'chain‑of‑custody and lineage',
+      `human‑defined governance states`,
+      `deterministic AI execution`,
+      `substrate‑layer alignment`,
+      `non‑drifting operational behavior`,
     ],
-    close: 'Growth must preserve continuity, not erode it.',
+    close: `AI does not replace humans. AI extends governed human capability.`,
+  },
+  {
+    title: `6. Good Systems Stay Aligned as They Grow`,
+    body: `Scale must never break alignment. Systems must maintain continuity across identity, data, and operational substrates — even as they expand. Alignment is a structural requirement, not a feature.`,
+    governs: [
+      `substrate‑layer architecture`,
+      `cross‑system integration`,
+      `retention governance`,
+      `chain‑of‑custody and lineage`,
+    ],
+    close: `Growth must preserve continuity, not erode it.`,
   },
 ];
 ---
@@ -66,18 +77,28 @@ const principles = [
   <section class="hero-page">
     <div class="container">
       <p class="kicker">About · Principles</p>
-      <h1>The governing laws that shape every Sovrin system.</h1>
+      <h1>The Principles That Govern Sovrin's Architecture.</h1>
       <p class="lede">
-        Sovrin Group operates on a set of architectural principles that define how identity, governance, and AI must behave to remain safe, aligned, and continuous. These principles are not values or aspirations — they are structural laws that every Sovrin artifact, model, and substrate‑layer design must inherit from.
+        Sovrin Group operates on a set of architectural principles that define how identity, governance, continuity, and AI must behave to remain safe, aligned, and non-drifting. These principles are not values, aspirations, or recommendations. They are structural laws that every Sovrin system, model, and governance framework must inherit.
       </p>
       <p class="lede">
-        They ensure continuity. They eliminate drift. They create systems that behave correctly by design.
+        They establish continuity. They eliminate drift. They create systems that behave correctly by design.
       </p>
     </div>
   </section>
 
   <section class="section section-cards">
     <div class="container">
+      <div class="prose principle-intro">
+        <h2>How Principles Shape the Architecture</h2>
+        <p>
+          At Sovrin, architecture follows principle. These principles are not guidance layered onto systems after they are designed. They are the source from which the architecture is derived.
+        </p>
+        <p>
+          Every Sovrin system inherits its identity model, governance model, continuity requirements, human stewardship controls, and trust objectives directly from these principles. Together, they define how Sovrin designs systems that remain governed, aligned, explainable, and trustworthy as they evolve.
+        </p>
+      </div>
+
       <div class="tenet-list">
         {principles.map((p) => (
           <article class="tenet principle">
@@ -95,18 +116,7 @@ const principles = [
       </div>
 
       <div class="prose principle-closing">
-        <h2>How Principles Shape the Architecture</h2>
-        <p>
-          These principles define how Sovrin designs governed systems. Identity anchors the architecture. Architecture creates continuity. Continuity enables safe, deterministic AI. Deterministic AI enables accountable operations.
-        </p>
-        <p class="doctrine">This is the Sovrin doctrine: Identity → Architecture → Continuity → Deterministic AI → Governed Systems</p>
-
-        <h2>Governance Declaration</h2>
-        <p>
-          These principles govern every Sovrin artifact, every model, every substrate‑layer design, and every continuity framework. They are the foundation of SIG‑Eighty kiln‑mode and the governed reasoning models that support it.
-        </p>
-
-        <div class="page-links" style="margin-top: 2rem;">
+        <div class="page-links" style="margin-top: 0;">
           <a class="btn" href="/about/origins/">Origins</a>
           <a class="btn" href="/about/team/">Architecture Team</a>
         </div>
@@ -118,4 +128,3 @@ const principles = [
   </section>
   </div>
 </Base>
-
