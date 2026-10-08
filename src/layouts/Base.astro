@@ -30,6 +30,7 @@ const navItems = [
     <link rel="icon" type="image/png" href="/images/logo.png" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <div class="site-bg" aria-hidden="true"></div>
     <header class="site-header">
       <div class="container bar">
@@ -49,7 +50,7 @@ const navItems = [
       </div>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
       <slot />
     </main>
 
@@ -116,7 +117,10 @@ const navItems = [
 
       // and so does Escape, or picking a link
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') setMenu(false);
+        if (e.key === 'Escape' && nav?.classList.contains('open')) {
+          setMenu(false);
+          (toggle as HTMLElement | null)?.focus();
+        }
       });
       nav?.querySelectorAll('a').forEach((a) =>
         a.addEventListener('click', () => setMenu(false))
