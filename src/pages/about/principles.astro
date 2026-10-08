@@ -5,7 +5,8 @@ import Base from '../../layouts/Base.astro';
 // including her punctuation, em dashes and non-breaking hyphens.
 const principles = [
   {
-    title: `1. Identity Is the Anchor of Every System`,
+    num: '1',
+    title: `Identity Is the Anchor of Every System`,
     body: `Identity is the invariant every governed system must inherit from. It establishes continuity across people, processes, data, and intelligent systems. When identity fractures, systems drift, governance collapses, and risk compounds.`,
     governs: [
       `identity continuity`,
@@ -16,7 +17,8 @@ const principles = [
     close: `Identity is the upstream operator. Everything else is downstream.`,
   },
   {
-    title: `2. Governance Works Only When It's Architectural, Not After‑the‑Fact`,
+    num: '2',
+    title: `Governance Works Only When It's Architectural, Not After‑the‑Fact`,
     body: `Governance is a design property, not an enforcement activity. Systems behave correctly when governance is embedded into the substrate. When governance is bolted on, systems drift, fracture, and fail under load.`,
     governs: [
       `governed reasoning substrates`,
@@ -27,7 +29,8 @@ const principles = [
     close: `Governance must be structural, proactive, and unavoidable.`,
   },
   {
-    title: `3. Trust is the apex objective.`,
+    num: '3',
+    title: `Trust is the apex objective.`,
     body: `Trust is a human outcome, not a technical feature. People trust systems when those systems behave consistently, transparently, and without drift. Trust emerges when the architecture makes correctness the default and eliminates the need for belief, persuasion, or reassurance.`,
     governs: [
       `trust compliance (T=1)`,
@@ -38,7 +41,8 @@ const principles = [
     close: `Trust must be architected, not requested.`,
   },
   {
-    title: `4. Complexity Is the Enemy of Continuity`,
+    num: '4',
+    title: `Complexity Is the Enemy of Continuity`,
     body: `Complexity creates drift, brittleness, and emergent failure modes. Clear architectures, clear identity models, and clear governance rules produce predictable, reconstructable systems. Clarity is not aesthetic — it is operational safety.`,
     governs: [
       `architecture simplification`,
@@ -49,7 +53,8 @@ const principles = [
     close: `Clarity is a security control.`,
   },
   {
-    title: `5. People and AI Build Better Systems Together Than Either Can Alone`,
+    num: '5',
+    title: `People and AI Build Better Systems Together Than Either Can Alone`,
     body: `AI amplifies human capability; humans anchor AI to meaning, context, and accountability. The strongest systems are co‑designed: human‑defined, AI‑executed, and substrate‑governed. This prevents drift, preserves intent, and ensures deterministic behavior.`,
     governs: [
       `human‑defined governance states`,
@@ -60,7 +65,8 @@ const principles = [
     close: `AI does not replace humans. AI extends governed human capability.`,
   },
   {
-    title: `6. Good Systems Stay Aligned as They Grow`,
+    num: '6',
+    title: `Good Systems Stay Aligned as They Grow`,
     body: `Scale must never break alignment. Systems must maintain continuity across identity, data, and operational substrates — even as they expand. Alignment is a structural requirement, not a feature.`,
     governs: [
       `substrate‑layer architecture`,
@@ -102,8 +108,9 @@ const principles = [
       <div class="tenet-list">
         {principles.map((p) => (
           <article class="tenet principle">
+            <div class="principle-num" aria-hidden="true">{p.num}</div>
             <div class="principle-body">
-              <h2>{p.title}</h2>
+              <h2><span class="sr-only">{p.num}. </span>{p.title}</h2>
               <p>{p.body}</p>
               <p class="principle-governs">This principle governs:</p>
               <ul>
